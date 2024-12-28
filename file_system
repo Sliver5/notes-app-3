@@ -1,0 +1,74 @@
+/Bear-Like-Notes-Docs
+├── Overview
+│   ├── Product-Name.txt
+│   ├── Purpose.txt
+│
+├── Objectives
+│   ├── Simplicity.txt
+│   ├── Organization.txt
+│   ├── Scalability.txt
+│
+├── User-Roles-and-Use-Cases
+│   ├── User-Roles
+│   │   ├── Authenticated-User.txt
+│   │   ├── Unauthenticated-User.txt
+│   ├── Primary-Use-Cases
+│       ├── Create-a-Note.txt
+│       ├── View-All-Notes.txt
+│       ├── Filter-by-Hashtag.txt
+│       ├── Filter-by-Date.txt
+│       ├── Edit-a-Note.txt
+│       ├── Delete-a-Note.txt
+│
+├── Features
+│   ├── Notes-Management
+│   │   ├── Create-New-Note.txt
+│   │   ├── Read-Notes.txt
+│   │   ├── Edit-Notes.txt
+│   │   ├── Delete-Notes.txt
+│   ├── Filtering-and-Sorting
+│   │   ├── Filter-by-Hashtag.txt
+│   │   ├── Filter-by-Date.txt
+│   ├── Authentication
+│       ├── Sign-Up-Log-In.txt
+│
+├── User-Interface-Requirements
+│   ├── Layout.txt
+│   ├── Notes-List.txt
+│   ├── Create-Edit-Form.txt
+│   ├── Styling.txt
+│
+├── Technical-Requirements
+│   ├── Frontend
+│   │   ├── Framework.txt
+│   │   ├── Styling.txt
+│   ├── Backend-and-Database
+│   │   ├── Supabase.txt
+│   │   ├── Authentication.txt
+│   ├── APIs
+│   │   ├── Create-API-Routes.txt
+│   │   ├── Example-Routes.txt
+│   ├── Deployment.txt
+│
+├── Non-Functional-Requirements
+│   ├── Security.txt
+│   ├── Performance.txt
+│   ├── Scalability.txt
+│   ├── Reliability.txt
+│   ├── Usability.txt
+│   ├── Maintainability.txt
+│
+├── Milestones-and-Roadmap
+│   ├── MVP-Core-Functionality.txt
+│   ├── Post-MVP-Enhancements.txt
+│
+├── Success-Metrics
+│   ├── User-Retention.txt
+│   ├── Number-of-Notes-Created.txt
+│   ├── Low-Error-Rate.txt
+│   ├── Feedback.txt
+│
+└── Risks-and-Mitigations
+    ├── User-Data-Security.txt
+    ├── Performance-Bottlenecks.txt
+    ├── Feature-Creep.txt

@@ -1,0 +1,136 @@
+1. Overview
+Product Name: My Notes App
+Purpose: A super simple notes app that allows users to create, view, edit, and delete notes. Each note is tagged with a hashtag-based category (e.g., #work, #personal) and is appended with a date automatically. Users can filter notes by hashtag category or by date to quickly find relevant information.
+
+2. Objectives
+Simplicity: Provide an intuitive, minimal interface where users can manage notes without extra features such as comments or complex folder structures.
+Organization: Enable users to categorize notes using hashtags and quickly filter by date or tag.
+Scalability: Built using modern, serverless-friendly technologies (Next.js + Supabase) with secure authentication (Clerk).
+3. User Roles & Use Cases
+3.1 User Roles
+Authenticated User: Can create, edit, delete, and filter notes. Users must be signed in to see and manage their own notes.
+Unauthenticated User: Can only see a login/signup screen. They do not have access to any notes.
+3.2 Primary Use Cases
+Create a Note: User enters note text, selects or adds a new hashtag category. The note automatically stores the current date/time.
+View All Notes: User sees a list of their notes in chronological order (or any default sorting), with each note showing its text, date, and hashtag.
+Filter by Hashtag: Selecting a hashtag (e.g., #work) shows only notes tagged with #work.
+Filter by Date: User can filter notes by a chosen date range or single date.
+Edit a Note: User can modify the text or change the hashtag.
+Delete a Note: User can remove a note permanently.
+4. Features
+4.1 Notes Management
+Create New Note
+
+Fields: Note text (multi-line text), Hashtag category (text input or dropdown).
+Automatically capture current date and time (to store within the note’s metadata in Supabase).
+Read Notes
+
+Display a scrollable list of notes with the most recent note on top (or user’s preferred sort order).
+Each note shows:
+Text snippet
+Date/time created (or last edited if you prefer)
+Hashtag category (e.g., #bear)
+Edit Notes
+
+Users can update the text and hashtag of existing notes.
+Delete Notes
+
+A delete button or context action to remove the note from the database.
+4.2 Filtering & Sorting
+Filter by Hashtag
+
+A side menu or clickable list of hashtags (e.g., on the left) to filter notes.
+Clicking a hashtag only displays notes with that hashtag.
+Filter by Date
+
+A simple date picker or date range input to filter notes by creation date.
+Optional: Provide a “Today,” “This Week,” “This Month,” or “All Time” quick filter.
+4.3 Authentication
+Sign Up / Log In
+Handled by Clerk (username/password, social login, etc. depending on your Clerk configuration).
+Secure session management so only the user’s notes are displayed once logged in.
+5. User Interface Requirements
+Layout:
+
+A simple layout with a left sidebar for hashtags and filters (similar to Bear’s categories pane).
+Main content area for the notes list and a button for creating new notes.
+Notes List:
+
+Each note in the list shows a short preview (first lines of text), the date, and the hashtag label.
+Clicking on a note lets users expand/edit the full text.
+Create/Edit Form:
+
+A pop-up modal or a form at the top of the screen that includes:
+Multi-line text input
+Hashtag input/dropdown
+Save or Update button
+Styling:
+
+Use Tailwind CSS for quick and consistent styling.
+Keep it minimal (whitespaces, clean lines, readable font sizes).
+6. Technical Requirements
+Frontend:
+
+Framework: Next.js for server-side rendering and performance.
+Styling: Tailwind CSS for utility-first CSS.
+Backend & Database:
+
+Supabase
+Used as the primary database for storing user notes.
+Real-time or RESTful API endpoints for CRUD operations on notes.
+Integration with row-level security to ensure each user only accesses their own notes.
+Authentication:
+
+Clerk for user authentication, session management, and user profile handling.
+APIs:
+
+Create a set of Next.js API routes or use Supabase’s built-in endpoints.
+Example routes:
+POST /api/notes → Create new note
+GET /api/notes?hashtag=...&date=... → Read/filter notes
+PUT /api/notes/{id} → Update note
+DELETE /api/notes/{id} → Delete note
+Deployment:
+
+Deploy on a platform that easily integrates with serverless functions (e.g., Vercel) or any environment supported by Next.js and Supabase.
+7. Non-Functional Requirements
+Security:
+Must ensure that only authenticated users can perform CRUD operations on their notes.
+Performance:
+Quick load times for the notes list (caching or SSR as appropriate).
+Scalability:
+Ability to handle a growing user base, with Supabase and Next.js scaling seamlessly.
+Reliability:
+Automatic backups or versions of the Supabase database.
+Usability:
+Straightforward, minimalistic UX with easily discoverable features (filters, new note creation, etc.).
+Maintainability:
+Code structured in a clear, modular way.
+Make use of Next.js and Tailwind best practices.
+8. Milestones & Roadmap
+MVP (Core Functionality)
+Set up Next.js with Tailwind.
+Integrate Clerk for authentication (sign up/in).
+Integrate Supabase and create “Notes” table (fields: id, user_id, text, hashtag, created_at).
+Implement pages:
+Login/Sign up
+Notes List (with create/edit/delete)
+Filtering by hashtag and date
+Post-MVP Enhancements
+Pagination or infinite scrolling.
+More advanced filtering (e.g., multiple hashtags, date ranges).
+Sorting options (e.g., alphabetical, oldest first).
+Rich text or markdown support for notes (if desired).
+Mobile-friendly responsive UI enhancements.
+9. Success Metrics
+User Retention: Number of returning daily/weekly users.
+Number of Notes Created: Total notes created per user over time.
+Low Error Rate: Minimal 4xx or 5xx errors from the API.
+Feedback: Positive user feedback on simplicity and usability.
+10. Risks & Mitigations
+User Data Security:
+Use secure authentication (Clerk) and properly secure Supabase database with row-level security.
+Performance Bottlenecks:
+Use Next.js for server-side rendering and efficient fetching with Supabase.
+Feature Creep:
+Clearly define an MVP and limit new features until the core functionality is stable.
